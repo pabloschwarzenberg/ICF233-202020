@@ -7,7 +7,7 @@ DATABASES = {
         'USER' : 'icf',
         'PASSWORD' : 'Secret.123',
         'DEFAULT-CHARACTER-SET' : 'utf8',
-        'HOST' : '192.168.0.2',
+        'HOST' : 'grupo00.c5d4mi2dthpc.us-east-1.rds.amazonaws.com',
         'PORT' : '3306',
         'TEST': {
             'NAME': 'planificacion_test',
@@ -15,10 +15,14 @@ DATABASES = {
     },
 }
 
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    )
+}
 STATIC_ROOT="/servicioplanificacion/static"
-
+#ADMIN_ENABLED=False
 DEBUG=False
-
 SECRET_KEY=os.environ["SECRET_KEY"]
 
 ALLOWED_HOSTS = ['*']
